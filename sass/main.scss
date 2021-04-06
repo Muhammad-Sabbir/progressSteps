@@ -1,0 +1,107 @@
+$primary-color: #2ecc71;
+$light-color: #7f8c8d;
+$button-font-color: #fff;
+$number-color: #8e44ad;
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-class {
+  display: flex;
+  justify-content: center;
+  .btn {
+    background-color: $primary-color;
+    padding: 0.5rem 1.5rem;
+    color: $button-font-color;
+    margin: 0 0.5rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    width: 5.5rem;
+    cursor: pointer; //not-allowed
+    border: none;
+    &:active {
+      transform: scale(0.9);
+    }
+    &:focus {
+      outline: 0;
+    }
+    &:disabled {
+      background-color: $light-color;
+      cursor: not-allowed;
+    }
+  }
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 30rem;
+  .line {
+    height: 5px;
+    width: 100%;
+    background-color: $light-color;
+    position: relative;
+    z-index: 0;
+    .in-line {
+      height: 100%;
+      width: 0%;
+      background-color: $primary-color;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: all 0.5s ease-in;
+      z-index: 1;
+    }
+  }
+  h1{
+    margin: 3rem auto;
+    color: $number-color;
+  }
+
+  .line-box-container {
+    margin-bottom: 2rem;
+
+    .box-container {
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-55%);
+      z-index: 2;
+
+      .box {
+          cursor: pointer;
+        font-size: 1.5rem;
+        border: 3px solid $light-color;
+        padding: 0.3rem;
+        border-radius: 10%;
+        text-align: center;
+        height: 30px;
+        width: 30px;
+        color: $number-color;
+        background-color: white;
+        transition: all 0.5s ease 0.5s;
+        &:last-child{
+          margin-right: -5px;
+          pointer-events: none;
+        }
+        &:first-child{
+          
+          margin-left: -5px;
+          pointer-events: none;
+          cursor: not-allowed;
+        }
+        &.active {
+            border-color: $primary-color;
+          }
+          &:active {
+            transform: scale(0.7);
+          }
+      }
+      
+      
+    }
+  }
+}
