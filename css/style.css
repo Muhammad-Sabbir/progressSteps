@@ -45,9 +45,10 @@ body {
       left: 0;
       transition: all 0.5s ease-in;
       z-index: 1; }
-  .container h1 {
+  .container h2 {
     margin: 3rem auto;
-    color: #8e44ad; }
+    color: #8e44ad;
+    text-align: center; }
   .container .line-box-container {
     margin-bottom: 2rem; }
     .container .line-box-container .box-container {
